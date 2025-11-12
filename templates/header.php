@@ -6,10 +6,21 @@
     <title>Motosiklet Servis Yönetimi</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0; }
-        .navbar { background-color: #333; overflow: hidden; }
-        .navbar a { float: left; display: block; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; }
-        .navbar a:hover { background-color: #ddd; color: black; }
-        .container { max-width: 960px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .navbar { background-color: #333; overflow: auto; padding: 10px 0; }
+        .navbar a {
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            margin: 5px 10px;
+            transition: background-color 0.3s;
+            float: left; /* Geniş ekranlar için */
+        }
+        .navbar a:hover { background-color: #555; }
+        .container { max-width: 1200px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         h1, h2 { color: #444; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
         .form-section { margin-bottom: 30px; padding: 20px; border: 1px solid #eee; border-radius: 5px; }
         .form-group { margin-bottom: 15px; }
@@ -38,6 +49,15 @@
         table { width:100%; border-collapse: collapse; margin-top: 20px;}
         th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
         thead tr { background-color: #007bff; color: white; }
+
+        /* Mobil Uyumluluk */
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                float: none;
+                width: 90%;
+                margin: 5px auto;
+            }
+        }
     </style>
 </head>
 <body>

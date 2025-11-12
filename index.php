@@ -23,10 +23,6 @@
                     <input type="tel" id="telefon" name="telefon">
                 </div>
                 <div class="form-group">
-                    <label for="email">E-posta</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-group">
                     <label for="adres">Adres</label>
                     <textarea id="adres" name="adres"></textarea>
                 </div>
@@ -47,7 +43,7 @@
                 </div>
                 <div class="form-group">
                     <label for="yil">Yıl</label>
-                    <input type="number" id="yil" name="yil" min="1950" max="<?php echo date('Y'); ?>">
+                    <input type="number" id="yil" name="yil" min="1988" max="<?php echo date('Y'); ?>">
                 </div>
             </div>
         </div>
@@ -74,6 +70,37 @@
     <div id="response-message"></div>
 </div>
 
+<!-- Stok Yönetimi Alanı -->
+<div class="form-section" id="stok-yonetimi">
+    <h2>Stok Yönetimi</h2>
+    <form id="yeniStokForm">
+        <div style="display: flex; gap: 15px; align-items: flex-end;">
+            <div class="form-group" style="flex: 3;">
+                <label for="parca_adi">Parça Adı</label>
+                <input type="text" id="parca_adi" name="parca_adi" required>
+            </div>
+            <div class="form-group" style="flex: 2;">
+                <label for="parca_kodu">Parça Kodu</label>
+                <input type="text" id="parca_kodu" name="parca_kodu">
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label for="adet">Adet</label>
+                <input type="number" id="adet" name="adet" value="1" min="0" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label for="alis_fiyati">Alış Fiyatı (₺)</label>
+                <input type="number" id="alis_fiyati" name="alis_fiyati" step="0.01" min="0">
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label for="satis_fiyati">Satış Fiyatı (₺)</label>
+                <input type="number" id="satis_fiyati" name="satis_fiyati" step="0.01" min="0" required>
+            </div>
+            <button type="submit" style="flex: 1; height: 40px;">Stok Ekle</button>
+        </div>
+    </form>
+    <div id="stokResponseMessage" style="margin-top: 15px;"></div>
+</div>
+
 <!-- Stok Görüntüleme Alanı -->
 <div class="form-section" id="stok-goruntuleme">
     <h2>Stok Durumu</h2>
@@ -84,6 +111,7 @@
                 <th>Parça Kodu</th>
                 <th>Adet</th>
                 <th>Satış Fiyatı</th>
+                <th>İşlemler</th>
             </tr>
         </thead>
         <tbody>

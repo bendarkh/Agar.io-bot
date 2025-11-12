@@ -4,7 +4,6 @@ CREATE TABLE musteriler (
     ad VARCHAR(100) NOT NULL,
     soyad VARCHAR(100) NOT NULL,
     telefon VARCHAR(15) UNIQUE,
-    email VARCHAR(100) UNIQUE,
     adres TEXT,
     kayit_tarihi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

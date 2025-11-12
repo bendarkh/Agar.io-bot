@@ -8,7 +8,6 @@ $data = json_decode(file_get_contents('php://input'), true);
 $ad = $data['ad'] ?? '';
 $soyad = $data['soyad'] ?? '';
 $telefon = $data['telefon'] ?? null;
-$email = $data['email'] ?? null;
 $adres = $data['adres'] ?? null;
 
 // Araç bilgileri
@@ -35,8 +34,8 @@ try {
     }
 
     // 2. Müşteriyi ekle
-    $stmt = $db->prepare("INSERT INTO musteriler (ad, soyad, telefon, email, adres) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$ad, $soyad, $telefon, $email, $adres]);
+    $stmt = $db->prepare("INSERT INTO musteriler (ad, soyad, telefon, adres) VALUES (?, ?, ?, ?)");
+    $stmt->execute([$ad, $soyad, $telefon, $adres]);
     $musteri_id = $db->lastInsertId();
 
     // 3. Aracı ekle
